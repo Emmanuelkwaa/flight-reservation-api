@@ -25,6 +25,9 @@ public class City {
     @OneToMany(mappedBy = "airline")
     private Set<Airport> airport;
 
+    @OneToMany(mappedBy = "airplane")
+    private Set<Flight> flights;
+
     public City() {
     }
 

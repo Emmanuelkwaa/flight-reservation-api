@@ -1,17 +1,52 @@
 package com.skillstorm.flightreservationapi.models;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
+@Entity
+@Table
 public class Flight {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "flight_id")
     private int id;
+
+    @Column(name = "flight_number")
+    @NotBlank
     private String flightNumber;
+
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "airplane_id")
     private Airplane airplane;
+
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "city_id")
     private City arrivalCity;
+
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "city_id")
     private City fromCity;
+
+    @Column(name = "depart_datetime")
+    @NotNull
     private Date departDateTime;
+
+    @Column(name = "depart_datetime")
+    @NotNull
     private Date arrivalDateTime;
-    private int capacity;
+
+    @Column(name = "economy_price")
+    @NotNull
     private double economyPrice;
+
+    @Column(name = "business_price")
+    @NotNull
     private double businessPrice;
 
     public Flight() {
@@ -23,7 +58,6 @@ public class Flight {
                   City fromCity,
                   Date departDateTime,
                   Date arrivalDateTime,
-                  int capacity,
                   double economyPrice,
                   double businessPrice
     ) {
@@ -33,7 +67,6 @@ public class Flight {
         this.fromCity = fromCity;
         this.departDateTime = departDateTime;
         this.arrivalDateTime = arrivalDateTime;
-        this.capacity = capacity;
         this.economyPrice = economyPrice;
         this.businessPrice = businessPrice;
     }
@@ -45,7 +78,6 @@ public class Flight {
                   City fromCity,
                   Date departDateTime,
                   Date arrivalDateTime,
-                  int capacity,
                   double economyPrice,
                   double businessPrice
     ) {
@@ -56,7 +88,6 @@ public class Flight {
         this.fromCity = fromCity;
         this.departDateTime = departDateTime;
         this.arrivalDateTime = arrivalDateTime;
-        this.capacity = capacity;
         this.economyPrice = economyPrice;
         this.businessPrice = businessPrice;
     }
@@ -117,14 +148,6 @@ public class Flight {
         this.arrivalDateTime = arrivalDateTime;
     }
 
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-
     public double getEconomyPrice() {
         return economyPrice;
     }
@@ -151,7 +174,6 @@ public class Flight {
                 ", fromCity=" + fromCity +
                 ", departDateTime=" + departDateTime +
                 ", arrivalDateTime=" + arrivalDateTime +
-                ", capacity=" + capacity +
                 ", economyPrice=" + economyPrice +
                 ", businessPrice=" + businessPrice +
                 '}';
