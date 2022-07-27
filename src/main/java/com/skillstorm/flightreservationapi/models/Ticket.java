@@ -1,13 +1,43 @@
 package com.skillstorm.flightreservationapi.models;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
+@Entity
+@Table
 public class Ticket {
+
+    @Id
+    @GenericGenerator(name = "ticket_id", strategy = "com.skillstorm.flightreservationapi.services.TicketIdGenerator")
+    @GeneratedValue(generator = "ticket_id")
+    @Column(name = "ticket_id")
     private String id;
+
+    @NotNull
+    @ManyToOne // defaults to eager
+    @JoinColumn(name = "flight_id")
     private Flight flight;
+
+    @NotNull
+    @ManyToOne // defaults to eager
+    @JoinColumn(name = "user_id")
     private User user;
+
+    @NotNull
+    @Column(name = "date_of_purchase")
     private Date dateOfPurchase;
+
+    @NotNull
+    @ManyToOne // defaults to eager
+    @JoinColumn(name = "seat_id")
     private Seat seat;
+
+    @NotNull
+    @Column
     private double price;
 
     public Ticket() {
