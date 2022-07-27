@@ -25,19 +25,19 @@ public class Flight {
 
     @NotNull
     @ManyToOne
-    @JoinColumn(name = "city_id")
+    @JoinColumn(name = "depart_city_id")
     private City arrivalCity;
 
     @NotNull
     @ManyToOne
-    @JoinColumn(name = "city_id")
+    @JoinColumn(name = "arrival_city_id")
     private City fromCity;
 
     @Column(name = "depart_datetime")
     @NotNull
     private Date departDateTime;
 
-    @Column(name = "depart_datetime")
+    @Column(name = "arrival_datetime")
     @NotNull
     private Date arrivalDateTime;
 
