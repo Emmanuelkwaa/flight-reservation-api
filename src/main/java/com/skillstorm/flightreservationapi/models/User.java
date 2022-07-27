@@ -17,11 +17,11 @@ public class User {
     @NotBlank
     private String firstName;
 
-    @Column(name = "first_name")
+    @Column(name = "last_name")
     @NotBlank
     private String lastName;
 
-    @Column(name = "first_name")
+    @Column(name = "phone_number")
     @NotBlank
     private String phoneNumber;
 
