@@ -26,23 +26,20 @@ public class Seat {
     @JoinColumn(name = "airplane_id")
     private Airplane airplane;
 
-    @OneToMany(mappedBy = "seat")
-    private Set<Ticket> tickets;
-
     public Seat() {
     }
 
-    public Seat(String seatNumber, boolean isTaken, Set<Ticket> tickets) {
+    public Seat(String seatNumber, boolean isTaken, Airplane airplane) {
         this.seatNumber = seatNumber;
         this.isTaken = isTaken;
-        this.tickets = tickets;
+        this.airplane = airplane;
     }
 
-    public Seat(int id, String seatNumber, boolean isTaken, Set<Ticket> tickets) {
+    public Seat(Integer id, String seatNumber, boolean isTaken, Airplane airplane) {
         this.id = id;
         this.seatNumber = seatNumber;
         this.isTaken = isTaken;
-        this.tickets = tickets;
+        this.airplane = airplane;
     }
 
     public int getId() {
@@ -77,14 +74,6 @@ public class Seat {
         this.airplane = airplane;
     }
 
-    public Set<Ticket> getTickets() {
-        return tickets;
-    }
-
-    public void setTickets(Set<Ticket> tickets) {
-        this.tickets = tickets;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -105,7 +94,6 @@ public class Seat {
                 ", seatNumber='" + seatNumber + '\'' +
                 ", isTaken=" + isTaken +
                 ", airplane=" + airplane +
-                ", tickets=" + tickets +
                 '}';
     }
 }

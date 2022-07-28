@@ -6,8 +6,10 @@ import com.skillstorm.flightreservationapi.data.repositories.GenericRepositoryIm
 import com.skillstorm.flightreservationapi.models.Flight;
 import com.skillstorm.flightreservationapi.services.interfaces.FlightServiceInterface;
 import org.springframework.stereotype.Service;
+import javax.transaction.Transactional;
 
 @Service
+@Transactional
 public class FlightService extends GenericRepositoryImpl<Flight, Integer> implements FlightServiceInterface {
     private FlightRepository flightRepository;
 

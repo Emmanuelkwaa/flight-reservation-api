@@ -2,7 +2,6 @@ package com.skillstorm.flightreservationapi.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import java.util.Objects;
 import java.util.Set;
 
@@ -22,58 +21,33 @@ public class City {
     @NotBlank
     private String country;
 
-    @OneToMany(mappedBy = "airline")
+    @OneToMany(mappedBy = "city")
     private Set<Airport> airport;
 
-    @OneToMany(mappedBy = "airplane")
-    private Set<Flight> flights;
+    @OneToMany(mappedBy = "departCity")
+    private Set<Flight> departFlight;
+
+    @OneToMany(mappedBy = "arrivalCity")
+    private Set<Flight> arrivalFlights;
 
     public City() {
     }
 
-    public City(String name, String country, Set<Airport> airport) {
+    public City(String name, String country, Set<Airport> airport, Set<Flight> departFlight, Set<Flight> arrivalFlights) {
         this.name = name;
         this.country = country;
         this.airport = airport;
+        this.departFlight = departFlight;
+        this.arrivalFlights = arrivalFlights;
     }
 
-    public City(int id, String name, String country, Set<Airport> airport) {
+    public City(Integer id, String name, String country, Set<Airport> airport, Set<Flight> departFlight, Set<Flight> arrivalFlights) {
         this.id = id;
         this.name = name;
         this.country = country;
         this.airport = airport;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public Set<Airport> getAirport() {
-        return airport;
-    }
-
-    public void setAirport(Set<Airport> airport) {
-        this.airport = airport;
+        this.departFlight = departFlight;
+        this.arrivalFlights = arrivalFlights;
     }
 
     @Override
@@ -96,6 +70,8 @@ public class City {
                 ", name='" + name + '\'' +
                 ", country='" + country + '\'' +
                 ", airport=" + airport +
+                ", departFlight=" + departFlight +
+                ", arrivalFlights=" + arrivalFlights +
                 '}';
     }
 }

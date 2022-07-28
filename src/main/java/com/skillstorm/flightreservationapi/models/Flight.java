@@ -26,12 +26,12 @@ public class Flight {
     @NotNull
     @ManyToOne
     @JoinColumn(name = "depart_city_id")
-    private City arrivalCity;
+    private City departCity;
 
     @NotNull
     @ManyToOne
     @JoinColumn(name = "arrival_city_id")
-    private City fromCity;
+    private City arrivalCity;
 
     @Column(name = "depart_datetime")
     @NotNull
@@ -52,51 +52,53 @@ public class Flight {
     public Flight() {
     }
 
-    public Flight(String flightNumber,
-                  Airplane airplane,
-                  City arrivalCity,
-                  City fromCity,
-                  Date departDateTime,
-                  Date arrivalDateTime,
-                  double economyPrice,
-                  double businessPrice
+    public Flight(
+            String flightNumber,
+            Airplane airplane,
+            City departCity,
+            City arrivalCity,
+            Date departDateTime,
+            Date arrivalDateTime,
+            double economyPrice,
+            double businessPrice
     ) {
         this.flightNumber = flightNumber;
         this.airplane = airplane;
+        this.departCity = departCity;
         this.arrivalCity = arrivalCity;
-        this.fromCity = fromCity;
         this.departDateTime = departDateTime;
         this.arrivalDateTime = arrivalDateTime;
         this.economyPrice = economyPrice;
         this.businessPrice = businessPrice;
     }
 
-    public Flight(int id,
-                  String flightNumber,
-                  Airplane airplane,
-                  City arrivalCity,
-                  City fromCity,
-                  Date departDateTime,
-                  Date arrivalDateTime,
-                  double economyPrice,
-                  double businessPrice
+    public Flight(
+            Integer id,
+            String flightNumber,
+            Airplane airplane,
+            City departCity,
+            City arrivalCity,
+            Date departDateTime,
+            Date arrivalDateTime,
+            double economyPrice,
+            double businessPrice
     ) {
         this.id = id;
         this.flightNumber = flightNumber;
         this.airplane = airplane;
+        this.departCity = departCity;
         this.arrivalCity = arrivalCity;
-        this.fromCity = fromCity;
         this.departDateTime = departDateTime;
         this.arrivalDateTime = arrivalDateTime;
         this.economyPrice = economyPrice;
         this.businessPrice = businessPrice;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -116,20 +118,20 @@ public class Flight {
         this.airplane = airplane;
     }
 
+    public City getDepartCity() {
+        return departCity;
+    }
+
+    public void setDepartCity(City departCity) {
+        this.departCity = departCity;
+    }
+
     public City getArrivalCity() {
         return arrivalCity;
     }
 
     public void setArrivalCity(City arrivalCity) {
         this.arrivalCity = arrivalCity;
-    }
-
-    public City getFromCity() {
-        return fromCity;
-    }
-
-    public void setFromCity(City fromCity) {
-        this.fromCity = fromCity;
     }
 
     public Date getDepartDateTime() {
@@ -170,8 +172,8 @@ public class Flight {
                 "id=" + id +
                 ", flightNumber='" + flightNumber + '\'' +
                 ", airplane=" + airplane +
+                ", departCity=" + departCity +
                 ", arrivalCity=" + arrivalCity +
-                ", fromCity=" + fromCity +
                 ", departDateTime=" + departDateTime +
                 ", arrivalDateTime=" + arrivalDateTime +
                 ", economyPrice=" + economyPrice +

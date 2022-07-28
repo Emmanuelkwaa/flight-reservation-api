@@ -12,7 +12,7 @@ import com.skillstorm.flightreservationapi.models.Ticket;
 @RequestMapping("api/v1/tickets")
 public class TicketController {
 
-	@GetMapping("/{id")
+	@GetMapping("/{id}")
 	public Ticket findById(@PathVariable int id) {
 		return new Ticket();
 	}

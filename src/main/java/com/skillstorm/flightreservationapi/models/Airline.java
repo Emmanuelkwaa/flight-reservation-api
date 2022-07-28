@@ -17,21 +17,16 @@ public class Airline {
     @NotBlank
     private String name;
 
-    @OneToMany(mappedBy = "airline")
-    private Set<Airplane> airplanes;
-
     public Airline() {
     }
 
-    public Airline(String name, Set<Airplane> airplanes) {
+    public Airline(String name) {
         this.name = name;
-        this.airplanes = airplanes;
     }
 
-    public Airline(int id, String name, Set<Airplane> airplanes) {
+    public Airline(int id, String name) {
         this.id = id;
         this.name = name;
-        this.airplanes = airplanes;
     }
 
     public int getId() {
@@ -50,13 +45,7 @@ public class Airline {
         this.name = name;
     }
 
-    public Set<Airplane> getAirplanes() {
-        return airplanes;
-    }
 
-    public void setAirplanes(Set<Airplane> airplanes) {
-        this.airplanes = airplanes;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -76,7 +65,6 @@ public class Airline {
         return "Airline{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", airplanes=" + airplanes +
                 '}';
     }
 }

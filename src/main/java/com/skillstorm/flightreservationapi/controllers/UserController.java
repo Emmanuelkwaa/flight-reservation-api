@@ -16,7 +16,7 @@ import com.skillstorm.flightreservationapi.models.User;
 @RequestMapping("api/v1/users")
 public class UserController {
 
-	@GetMapping("/{id")
+	@GetMapping("/{id}")
 	public User findById(@PathVariable int id) {
 		return new User();
 	}

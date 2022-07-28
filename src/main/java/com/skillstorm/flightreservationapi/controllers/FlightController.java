@@ -1,5 +1,8 @@
 package com.skillstorm.flightreservationapi.controllers;
 
+import com.skillstorm.flightreservationapi.services.implementation.FlightService;
+import com.skillstorm.flightreservationapi.services.unitOfWork.IUnitOfWork;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,15 +14,26 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.skillstorm.flightreservationapi.models.Flight;
 
+import java.util.Optional;
+
 @RestController
 @CrossOrigin("*")
 @RequestMapping("api/v1/flights")
 public class FlightController {
+	private final IUnitOfWork unitOfWork;
+	private final FlightService flightService;
+
+	@Autowired
+	public FlightController(IUnitOfWork unitOfWork, FlightService flightService) {
+		this.unitOfWork = unitOfWork;
+		this.flightService = flightService;
+	}
 
 
-	@GetMapping("/{id")
-	public Flight findById(@PathVariable int id) {
-		return new Flight();
+	@GetMapping("/{id}")
+	public Optional<Flight> findById(@PathVariable int id) {
+		Optional<Flight> flight = unitOfWork.flight().findById(id);
+		return flight;
 	}
 	
 	@PostMapping("/{id}")

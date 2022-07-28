@@ -16,7 +16,7 @@ import com.skillstorm.flightreservationapi.models.City;
 @RequestMapping("/api/v1/cities")
 public class CityController {
 	
-	@GetMapping("/{id")
+	@GetMapping("/{id}")
 	public City findById(@PathVariable int id) {
 		return new City();
 	}

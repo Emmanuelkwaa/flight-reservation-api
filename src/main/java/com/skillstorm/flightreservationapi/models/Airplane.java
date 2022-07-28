@@ -30,37 +30,31 @@ public class Airplane {
     @NotBlank
     private String model;
 
-    @OneToMany(mappedBy = "airplane")
-    private Set<Seat> seats;
+
 
     @NotBlank
     @ManyToOne // defaults to eager
     @JoinColumn(name = "airline_id")
     private Airline airline;
 
-    @OneToMany(mappedBy = "airplane")
-    private Set<Flight> flights;
+
 
     public Airplane() {
     }
 
-    public Airplane(int currentCapacity, int maxCapacity, String model, Set<Seat> seats, Airline airline, Set<Flight> flights) {
+    public Airplane(int currentCapacity, int maxCapacity, String model, Airline airline) {
         this.currentCapacity = currentCapacity;
         this.maxCapacity = maxCapacity;
         this.model = model;
-        this.seats = seats;
         this.airline = airline;
-        this.flights = flights;
     }
 
-    public Airplane(String id, int currentCapacity, int maxCapacity, String model, Set<Seat> seats, Airline airline, Set<Flight> flights) {
+    public Airplane(String id, int currentCapacity, int maxCapacity, String model, Airline airline) {
         this.id = id;
         this.currentCapacity = currentCapacity;
         this.maxCapacity = maxCapacity;
         this.model = model;
-        this.seats = seats;
         this.airline = airline;
-        this.flights = flights;
     }
 
     public String getId() {
@@ -79,13 +73,7 @@ public class Airplane {
         this.model = model;
     }
 
-    public Set<Seat> getSeats() {
-        return seats;
-    }
 
-    public void setSeats(Set<Seat> seats) {
-        this.seats = seats;
-    }
 
     public Airline getAirline() {
         return airline;
@@ -111,13 +99,7 @@ public class Airplane {
         this.maxCapacity = maxCapacity;
     }
 
-    public Set<Flight> getFlights() {
-        return flights;
-    }
 
-    public void setFlights(Set<Flight> flights) {
-        this.flights = flights;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -138,10 +120,7 @@ public class Airplane {
                 "id='" + id + '\'' +
                 ", currentCapacity=" + currentCapacity +
                 ", maxCapacity=" + maxCapacity +
-                ", model='" + model + '\'' +
-                ", seats=" + seats +
                 ", airline=" + airline +
-                ", flights=" + flights +
                 '}';
     }
 }

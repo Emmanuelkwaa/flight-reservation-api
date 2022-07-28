@@ -18,7 +18,7 @@ import com.skillstorm.flightreservationapi.models.Airplane;
 @RequestMapping("api/v1/airplanes")
 public class AirplaneController {
 	
-	@GetMapping("/{id")
+	@GetMapping("/{id}")
 	public Airplane findById(@PathVariable int id) {
 		return new Airplane();
 	}

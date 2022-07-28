@@ -3,8 +3,10 @@ package com.skillstorm.flightreservationapi.services.unitOfWork;
 import com.skillstorm.flightreservationapi.data.repositories.FlightRepository;
 import com.skillstorm.flightreservationapi.services.implementation.FlightService;
 import com.skillstorm.flightreservationapi.services.interfaces.FlightServiceInterface;
+import org.springframework.stereotype.Service;
 
-public class UnitOfWork implements UnitOfWorkInterface{
+@Service
+public class UnitOfWork implements IUnitOfWork {
     private FlightServiceInterface flightService;
 
     public UnitOfWork(FlightRepository flightRepository) {

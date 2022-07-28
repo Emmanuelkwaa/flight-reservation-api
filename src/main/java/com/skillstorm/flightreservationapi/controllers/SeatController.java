@@ -16,7 +16,7 @@ import com.skillstorm.flightreservationapi.models.Seat;
 @RequestMapping("api/v1/seats")
 public class SeatController {
 	
-	@GetMapping("/{id")
+	@GetMapping("/{id}")
 	public Seat findById(@PathVariable int id) {
 		return new Seat();
 	}
