@@ -13,7 +13,6 @@ public class UnitOfWork implements IUnitOfWork {
         this.flightService = new FlightService(flightRepository);
     }
 
-
     @Override
     public FlightServiceInterface flight() {
         return flightService;

@@ -13,10 +13,6 @@ import javax.transaction.Transactional;
 public class FlightService extends GenericRepositoryImpl<Flight, Integer> implements FlightServiceInterface {
     private FlightRepository flightRepository;
 
-//    public FlightService(GenericRepository<Flight, Integer> genericRepository) {
-//        super(genericRepository);
-//    }
-
     public FlightService(FlightRepository flightRepository) {
         super(flightRepository);
     }
