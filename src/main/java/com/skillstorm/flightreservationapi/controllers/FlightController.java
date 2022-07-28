@@ -22,12 +22,10 @@ import java.util.Optional;
 @RequestMapping("api/v1/flights")
 public class FlightController {
 	private final IUnitOfWork unitOfWork;
-	private final FlightService flightService;
 
 	@Autowired
-	public FlightController(IUnitOfWork unitOfWork, FlightService flightService) {
+	public FlightController(IUnitOfWork unitOfWork) {
 		this.unitOfWork = unitOfWork;
-		this.flightService = flightService;
 	}
 
 	@GetMapping
