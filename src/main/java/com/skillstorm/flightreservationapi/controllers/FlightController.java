@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.skillstorm.flightreservationapi.models.Flight;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -31,9 +32,15 @@ public class FlightController {
 
 
 	@GetMapping("/{id}")
-	public Optional<Flight> findById(@PathVariable int id) {
+	public Optional<Flight> getFlightById(@PathVariable int id) {
 		Optional<Flight> flight = unitOfWork.flight().findById(id);
 		return flight;
+	}
+
+
+	@GetMapping("/all")
+	public List<Flight> getAllFlights() {
+		return unitOfWork.flight().findAll();
 	}
 	
 	@PostMapping("/{id}")
