@@ -20,11 +20,6 @@ public class Flight {
 
     @NotNull
     @ManyToOne
-    @JoinColumn(name = "airplane_id")
-    private Airplane airplane;
-
-    @NotNull
-    @ManyToOne
     @JoinColumn(name = "depart_city_id")
     private City departCity;
 
@@ -48,6 +43,11 @@ public class Flight {
     @Column(name = "business_price")
     @NotNull
     private double businessPrice;
+
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "airplane_id")
+    private Airplane airplane;
 
     public Flight() {
     }
