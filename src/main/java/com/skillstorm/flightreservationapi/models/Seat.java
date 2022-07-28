@@ -1,29 +1,33 @@
 package com.skillstorm.flightreservationapi.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.Objects;
-import java.util.Set;
 
 @Entity
 @Table
 public class Seat {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "seat_id")
     private Integer id;
 
     @Column(name = "seat_number")
-    @NotNull
+    @NotBlank
     private String seatNumber;
 
     @Column(name = "is_taken")
-    @NotNull
+    @NotBlank
     private boolean isTaken;
 
     @NotNull
     @ManyToOne
     @JoinColumn(name = "airplane_id")
+    @JsonBackReference
     private Airplane airplane;
 
     public Seat() {
@@ -42,11 +46,11 @@ public class Seat {
         this.airplane = airplane;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -79,7 +83,7 @@ public class Seat {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Seat seat = (Seat) o;
-        return id == seat.id;
+        return id.equals(seat.id);
     }
 
     @Override

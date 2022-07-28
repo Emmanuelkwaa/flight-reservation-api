@@ -30,20 +30,18 @@ public class FlightController {
 		this.flightService = flightService;
 	}
 
+	@GetMapping
+	public List<Flight> getAllFlights() {
+		return unitOfWork.flight().findAll();
+	}
 
 	@GetMapping("/{id}")
 	public Optional<Flight> getFlightById(@PathVariable int id) {
 		Optional<Flight> flight = unitOfWork.flight().findById(id);
 		return flight;
 	}
-
-
-	@GetMapping("/all")
-	public List<Flight> getAllFlights() {
-		return unitOfWork.flight().findAll();
-	}
 	
-	@PostMapping("/{id}")
+	@PostMapping
 	public Flight createFlight(@PathVariable int id) {
 		return new Flight(); 
 	}

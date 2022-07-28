@@ -1,5 +1,6 @@
 package com.skillstorm.flightreservationapi.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -30,7 +31,9 @@ public class Airplane {
     @NotBlank
     private String model;
 
-
+    @OneToMany(mappedBy = "airplane")
+    @JsonManagedReference
+    private Set<Seat> seats;
 
     @NotBlank
     @ManyToOne // defaults to eager
@@ -42,18 +45,20 @@ public class Airplane {
     public Airplane() {
     }
 
-    public Airplane(int currentCapacity, int maxCapacity, String model, Airline airline) {
+    public Airplane(int currentCapacity, int maxCapacity, String model, Set<Seat> seats, Airline airline, Set<Flight> flights) {
         this.currentCapacity = currentCapacity;
         this.maxCapacity = maxCapacity;
         this.model = model;
+        this.seats = seats;
         this.airline = airline;
     }
 
-    public Airplane(String id, int currentCapacity, int maxCapacity, String model, Airline airline) {
+    public Airplane(String id, int currentCapacity, int maxCapacity, String model, Set<Seat> seats, Airline airline, Set<Flight> flights) {
         this.id = id;
         this.currentCapacity = currentCapacity;
         this.maxCapacity = maxCapacity;
         this.model = model;
+        this.seats = seats;
         this.airline = airline;
     }
 
@@ -73,7 +78,13 @@ public class Airplane {
         this.model = model;
     }
 
+    public Set<Seat> getSeats() {
+        return seats;
+    }
 
+    public void setSeats(Set<Seat> seats) {
+        this.seats = seats;
+    }
 
     public Airline getAirline() {
         return airline;
@@ -120,6 +131,8 @@ public class Airplane {
                 "id='" + id + '\'' +
                 ", currentCapacity=" + currentCapacity +
                 ", maxCapacity=" + maxCapacity +
+                ", model='" + model + '\'' +
+                ", seats=" + seats +
                 ", airline=" + airline +
                 '}';
     }
