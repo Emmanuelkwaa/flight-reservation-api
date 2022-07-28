@@ -1,4 +1,5 @@
 -- City
+DROP TABLE IF EXISTS City;
 CREATE TABLE `City` (
 	`city_id` SMALLINT unsigned NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(100) NOT NULL,
@@ -6,6 +7,8 @@ CREATE TABLE `City` (
 	PRIMARY KEY (`city_id`)
 );
 
+-- Airport
+DROP TABLE IF EXISTS Airport;
 CREATE TABLE `Airport` (
 	`airport_id` SMALLINT unsigned NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(100) NOT NULL,
@@ -18,6 +21,7 @@ CREATE TABLE `Airport` (
 );
 
 -- Airline
+DROP TABLE IF EXISTS Airline;
 CREATE TABLE `Airline` (
 	`airline_id` SMALLINT unsigned NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(100) NOT NULL,
@@ -25,6 +29,7 @@ CREATE TABLE `Airline` (
 );
 
 -- Airplane
+DROP TABLE IF EXISTS Airplane;
 CREATE TABLE `Airplane` (
 	`airplane_id` VARCHAR(20) NOT NULL,
 	`curent_capacity` TINYINT unsigned NOT NULL,
@@ -38,6 +43,8 @@ CREATE TABLE `Airplane` (
     ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+-- Seat
+DROP TABLE IF EXISTS Seat;
 CREATE TABLE `Seat` (
 	`seat_id` TINYINT unsigned NOT NULL,
 	`seat_number` VARCHAR(5) NOT NULL,
@@ -50,8 +57,10 @@ CREATE TABLE `Seat` (
     ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+-- Flight
+DROP TABLE IF EXISTS Flight;
 CREATE TABLE `Flight` (
-	`id` INT unsigned NOT NULL AUTO_INCREMENT,
+	`flight_id` INT unsigned NOT NULL AUTO_INCREMENT,
 	`flight_number` VARCHAR(10) UNIQUE NOT NULL,
 	`airplane_id` VARCHAR(15) NOT NULL,
     `depart_city_id` SMALLINT unsigned NOT NULL,
@@ -60,9 +69,9 @@ CREATE TABLE `Flight` (
 	`arrival_datetime` DATETIME NOT NULL,
 	`economy_price` DOUBLE(7, 2) unsigned NOT NULL,
 	`business_price` DOUBLE(7, 2) unsigned NOT NULL,
-	PRIMARY KEY (`id`),
+	PRIMARY KEY (`flight_id`),
 
-    CONSTRAINT fk_Airplane FOREIGN KEY (airplane_id)
+    CONSTRAINT fk_F_Airplane FOREIGN KEY (airplane_id)
     REFERENCES Airplane (airplane_id)
     ON DELETE CASCADE ON UPDATE CASCADE,
 
@@ -75,6 +84,8 @@ CREATE TABLE `Flight` (
     ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+-- User
+DROP TABLE IF EXISTS User;
 CREATE TABLE `User` (
 	`user_id` INT unsigned NOT NULL,
 	`first_name` VARCHAR(50) NOT NULL,
@@ -84,12 +95,17 @@ CREATE TABLE `User` (
 	PRIMARY KEY (`user_id`)
 );
 
+-- Ticket
+DROP TABLE IF EXISTS Ticket;
 CREATE TABLE `Ticket` (
 	`ticket_id` VARCHAR(15) NOT NULL,
+    `ticket_type` VARCHAR(15) NOT NULL,
 	`flight_id` INT unsigned NOT NULL,
 	`user_id` INT unsigned NOT NULL,
 	`date_of_purchase` DATETIME NOT NULL,
 	`seat_id` TINYINT unsigned NOT NULL,
+    `from` VARCHAR(100) NOT NULL,
+    `to` VARCHAR(100) NOT NULL,
 	`price` DOUBLE unsigned NOT NULL,
 	PRIMARY KEY (`ticket_id`),
 

@@ -17,6 +17,10 @@ public class Ticket {
     private String id;
 
     @NotNull
+    @Column(name = "ticket_type")
+    private String ticketType;
+
+    @NotNull
     @ManyToOne // defaults to eager
     @JoinColumn(name = "flight_id")
     private Flight flight;
@@ -37,26 +41,48 @@ public class Ticket {
 
     @NotNull
     @Column
+    private String from;
+
+    @NotNull
+    @Column
+    private String to;
+
+    @NotNull
+    @Column
     private double price;
 
     public Ticket() {
     }
 
-    public Ticket(Flight flight, User user, Date dateOfPurchase, Seat seat, double price) {
+    public Ticket(String ticketType, Flight flight, User user, Date dateOfPurchase, Seat seat, String from, String to, double price) {
+        this.ticketType = ticketType;
         this.flight = flight;
         this.user = user;
         this.dateOfPurchase = dateOfPurchase;
         this.seat = seat;
+        this.from = from;
+        this.to = to;
         this.price = price;
     }
 
-    public Ticket(String id, Flight flight, User user, Date dateOfPurchase, Seat seat, double price) {
+    public Ticket(String id, String ticketType, Flight flight, User user, Date dateOfPurchase, Seat seat, String from, String to, double price) {
         this.id = id;
+        this.ticketType = ticketType;
         this.flight = flight;
         this.user = user;
         this.dateOfPurchase = dateOfPurchase;
         this.seat = seat;
+        this.from = from;
+        this.to = to;
         this.price = price;
+    }
+
+    public String getTicketType() {
+        return ticketType;
+    }
+
+    public void setTicketType(String ticketType) {
+        this.ticketType = ticketType;
     }
 
     public String getId() {
@@ -99,6 +125,22 @@ public class Ticket {
         this.seat = seat;
     }
 
+    public String getFrom() {
+        return from;
+    }
+
+    public void setFrom(String from) {
+        this.from = from;
+    }
+
+    public String getTo() {
+        return to;
+    }
+
+    public void setTo(String to) {
+        this.to = to;
+    }
+
     public double getPrice() {
         return price;
     }
@@ -111,10 +153,13 @@ public class Ticket {
     public String toString() {
         return "Ticket{" +
                 "id='" + id + '\'' +
+                ", ticketType='" + ticketType + '\'' +
                 ", flight=" + flight +
                 ", user=" + user +
                 ", dateOfPurchase=" + dateOfPurchase +
                 ", seat=" + seat +
+                ", from='" + from + '\'' +
+                ", to='" + to + '\'' +
                 ", price=" + price +
                 '}';
     }
