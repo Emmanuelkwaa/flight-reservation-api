@@ -11,7 +11,7 @@ public class Seat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "seat_id")
-    private int id;
+    private Integer id;
 
     @Column(name = "seat_number")
     @NotNull

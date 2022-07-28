@@ -12,7 +12,7 @@ public class Flight {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "flight_id")
-    private int id;
+    private Integer id;
 
     @Column(name = "flight_number")
     @NotBlank
