@@ -1,6 +1,7 @@
 package com.skillstorm.flightreservationapi.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -20,10 +21,10 @@ public class Airport {
     @NotBlank
     private String name;
 
-    @NotNull
     @ManyToOne
     @JoinColumn(name = "city_id")
     @JsonBackReference
+    //@JsonIdentityReference(alwaysAsId = true)
     private City city;
 
     public Airport() {
