@@ -3,15 +3,18 @@ package com.skillstorm.flightreservationapi.services.unitOfWork;
 import com.skillstorm.flightreservationapi.data.repositories.AirportRepository;
 import com.skillstorm.flightreservationapi.data.repositories.CityRepository;
 import com.skillstorm.flightreservationapi.data.repositories.FlightRepository;
+import com.skillstorm.flightreservationapi.data.repositories.SeatRepository;
 import com.skillstorm.flightreservationapi.data.repositories.TicketRepository;
 import com.skillstorm.flightreservationapi.data.repositories.UserRepository;
 import com.skillstorm.flightreservationapi.services.implementation.AirportService;
 import com.skillstorm.flightreservationapi.services.implementation.CityService;
 import com.skillstorm.flightreservationapi.services.implementation.FlightService;
+import com.skillstorm.flightreservationapi.services.implementation.SeatService;
 import com.skillstorm.flightreservationapi.services.implementation.UserService;
 import com.skillstorm.flightreservationapi.services.interfaces.AirportServiceInterface;
 import com.skillstorm.flightreservationapi.services.interfaces.CityServiceInterface;
 import com.skillstorm.flightreservationapi.services.interfaces.FlightServiceInterface;
+import com.skillstorm.flightreservationapi.services.interfaces.SeatServiceInterface;
 import com.skillstorm.flightreservationapi.services.interfaces.TicketServiceInterface;
 import com.skillstorm.flightreservationapi.services.interfaces.UserServiceInterface;
 
@@ -24,14 +27,17 @@ public class UnitOfWork implements IUnitOfWork {
     private AirportServiceInterface airportService;
     private UserServiceInterface userService;
     private TicketServiceInterface ticketService;
+    private SeatServiceInterface seatService;
     
     public UnitOfWork(FlightRepository flightRepository,
     		CityRepository cityRepository, AirportRepository airportRepository, 
-    		UserRepository userRepository, TicketRepository ticketRepository) {
+    		UserRepository userRepository, TicketRepository ticketRepository,
+    		SeatRepository seatRepository) {
         this.flightService = new FlightService(flightRepository);
         this.cityService = new CityService(cityRepository);
         this.airportService = new AirportService(airportRepository);
         this.userService = new UserService(userRepository);
+        this.seatService = new SeatService(seatRepository);
     }
     
    
@@ -65,5 +71,12 @@ public class UnitOfWork implements IUnitOfWork {
 	@Override
 	public TicketServiceInterface ticket() {
 		return ticketService;
+	}
+
+
+
+	@Override
+	public SeatServiceInterface seat() {
+		return seatService;
 	}
 }
