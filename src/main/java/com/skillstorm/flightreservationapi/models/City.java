@@ -26,9 +26,9 @@ public class City {
     @NotBlank
     private String country;
 
-    @OneToMany(mappedBy = "city")
-    @JsonManagedReference
-    private Set<Airport> airport;
+//    @OneToMany(mappedBy = "city")
+//    @JsonManagedReference
+//    private Set<Airport> airport;
 
 //    @OneToMany(mappedBy = "departCity")
 //    private Set<Flight> departFlight;
@@ -39,17 +39,15 @@ public class City {
     public City() {
     }
 
-    public City(String name, String country, Set<Airport> airport) {
+    public City(String name, String country) {
         this.name = name;
         this.country = country;
-        this.airport = airport;
     }
 
-    public City(Integer id, String name, String country, Set<Airport> airport) {
+    public City(Integer id, String name, String country) {
         this.id = id;
         this.name = name;
         this.country = country;
-        this.airport = airport;
     }
 
     public Integer getId() {
@@ -76,14 +74,6 @@ public class City {
         this.country = country;
     }
 
-    public Set<Airport> getAirport() {
-        return airport;
-    }
-
-    public void setAirport(Set<Airport> airport) {
-        this.airport = airport;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -103,7 +93,6 @@ public class City {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", country='" + country + '\'' +
-                ", airport=" + airport +
                 '}';
     }
 }

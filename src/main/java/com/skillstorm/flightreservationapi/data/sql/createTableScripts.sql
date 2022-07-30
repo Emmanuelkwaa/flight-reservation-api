@@ -12,6 +12,7 @@ DROP TABLE IF EXISTS Airport;
 CREATE TABLE `Airport` (
 	`airport_id` SMALLINT unsigned NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(100) NOT NULL,
+    `code` VARCHAR(10) NOT NULL,
 	`city_id` SMALLINT unsigned NOT NULL,
 	PRIMARY KEY (`airport_id`),
 
@@ -61,10 +62,10 @@ CREATE TABLE `Seat` (
 DROP TABLE IF EXISTS Flight;
 CREATE TABLE `Flight` (
 	`flight_id` INT unsigned NOT NULL AUTO_INCREMENT,
-	`flight_number` VARCHAR(10) UNIQUE NOT NULL,
+	`flight_number` VARCHAR(10) NOT NULL,
 	`airplane_id` VARCHAR(15) NOT NULL,
-    `depart_city_id` SMALLINT unsigned NOT NULL,
-	`arrival_city_id` SMALLINT unsigned NOT NULL,
+    `depart_airport_id` SMALLINT unsigned NOT NULL,
+	`arrival_airport_id` SMALLINT unsigned NOT NULL,
 	`depart_datetime` DATETIME NOT NULL,
 	`arrival_datetime` DATETIME NOT NULL,
 	`economy_price` DOUBLE(7, 2) unsigned NOT NULL,
@@ -75,12 +76,12 @@ CREATE TABLE `Flight` (
     REFERENCES Airplane (airplane_id)
     ON DELETE CASCADE ON UPDATE CASCADE,
 
-    CONSTRAINT fk_DepartCity FOREIGN KEY (depart_city_id)
-    REFERENCES City (city_id)
+    CONSTRAINT fk_DepartCity FOREIGN KEY (depart_airport_id)
+    REFERENCES Airport (airport_id)
     ON DELETE CASCADE ON UPDATE CASCADE,
 
-    CONSTRAINT fk_ArriveCity FOREIGN KEY (arrival_city_id)
-    REFERENCES City (city_id)
+    CONSTRAINT fk_ArriveCity FOREIGN KEY (arrival_airport_id)
+    REFERENCES Airport (airport_id)
     ON DELETE CASCADE ON UPDATE CASCADE
 );
 

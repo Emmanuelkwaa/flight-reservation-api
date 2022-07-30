@@ -1,108 +1,49 @@
 -- CITY
-insert into City (city_id, name, country) values (1, 'Ushuaia', 'Argentina');
-insert into City (city_id, name, country) values (2, 'Yueyang', 'China');
-insert into City (city_id, name, country) values (3, 'Latowicz', 'Poland');
-insert into City (city_id, name, country) values (4, 'Hedi', 'China');
-insert into City (city_id, name, country) values (5, 'Kimberley', 'Canada');
-insert into City (city_id, name, country) values (6, 'Chuangwang', 'China');
-insert into City (city_id, name, country) values (7, 'Hefu', 'China');
-insert into City (city_id, name, country) values (8, 'Giedlarowa', 'Poland');
-insert into City (city_id, name, country) values (9, 'Ljungby', 'Sweden');
-insert into City (city_id, name, country) values (10, 'Xin’an', 'China');
-insert into City (city_id, name, country) values (11, 'Constantia', 'South Africa');
-insert into City (city_id, name, country) values (12, 'Hidalgo', 'Mexico');
-insert into City (city_id, name, country) values (13, 'Bagacay', 'Philippines');
-insert into City (city_id, name, country) values (14, 'Kajisara', 'Indonesia');
-insert into City (city_id, name, country) values (15, 'Ban Talat Bueng', 'Thailand');
-insert into City (city_id, name, country) values (16, 'Neẖalim', 'Israel');
-insert into City (city_id, name, country) values (17, 'Tutong', 'Brunei');
-insert into City (city_id, name, country) values (18, 'Asamankese', 'Ghana');
-insert into City (city_id, name, country) values (19, 'Mineiros', 'Brazil');
-insert into City (city_id, name, country) values (20, 'Lingkou', 'China');
-insert into City (city_id, name, country) values (21, 'Mavingouni', 'Comoros');
-insert into City (city_id, name, country) values (22, 'Zachepylivka', 'Ukraine');
-insert into City (city_id, name, country) values (23, 'Bobo-Dioulasso', 'Burkina Faso');
-insert into City (city_id, name, country) values (24, 'Anyama', 'Ivory Coast');
-insert into City (city_id, name, country) values (25, 'Acton Vale', 'Canada');
-insert into City (city_id, name, country) values (26, 'Tsubame', 'Japan');
-insert into City (city_id, name, country) values (27, 'Yinghai', 'China');
-insert into City (city_id, name, country) values (28, 'Obodivka', 'Ukraine');
-insert into City (city_id, name, country) values (29, 'Matalam', 'Philippines');
-insert into City (city_id, name, country) values (30, 'Talata Mafara', 'Nigeria');
-insert into City (city_id, name, country) values (31, 'Blachownia', 'Poland');
-insert into City (city_id, name, country) values (32, 'Būrabay', 'Kazakhstan');
-insert into City (city_id, name, country) values (33, 'Bogorodskoye', 'Russia');
-insert into City (city_id, name, country) values (34, 'Saint-Brieuc', 'France');
-insert into City (city_id, name, country) values (35, 'Likwatang Timur', 'Indonesia');
-insert into City (city_id, name, country) values (36, 'Umeå', 'Sweden');
-insert into City (city_id, name, country) values (37, 'Gibgos', 'Philippines');
-insert into City (city_id, name, country) values (38, 'Zhushan', 'China');
-insert into City (city_id, name, country) values (39, 'Pingshan', 'China');
-insert into City (city_id, name, country) values (40, 'Atami', 'Japan');
-insert into City (city_id, name, country) values (41, 'Santa Rita Village', 'Guam');
-insert into City (city_id, name, country) values (42, 'Kalepasan', 'Indonesia');
-insert into City (city_id, name, country) values (43, 'Roanoke', 'United States');
-insert into City (city_id, name, country) values (44, 'Almargem do Bispo', 'Portugal');
-insert into City (city_id, name, country) values (45, 'Hovtashen', 'Armenia');
-insert into City (city_id, name, country) values (46, 'Makanya', 'Tanzania');
-insert into City (city_id, name, country) values (47, 'Chisong', 'China');
-insert into City (city_id, name, country) values (48, 'Saint-Ouen', 'France');
-insert into City (city_id, name, country) values (49, 'Huangge', 'China');
-insert into City (city_id, name, country) values (50, 'Houston', 'United States');
-insert into City (city_id, name, country) values (51, 'New York City', 'United States');
+insert into City (city_id, name, country) values (1, 'Atlanta', 'United States');
+insert into City (city_id, name, country) values (2, 'Los Angeles	', 'United States');
+insert into City (city_id, name, country) values (3, 'Chicago', 'United States');
+insert into City (city_id, name, country) values (4, 'Dallas', 'United States');
+insert into City (city_id, name, country) values (5, 'Denver', 'United States');
+insert into City (city_id, name, country) values (6, 'New York	', 'United States');
+insert into City (city_id, name, country) values (7, 'San Francisco	', 'United States');
+insert into City (city_id, name, country) values (8, 'Las Vegas	', 'United States');
+insert into City (city_id, name, country) values (9, 'Seattle', 'United States');
+insert into City (city_id, name, country) values (10, 'Charlotte', 'United States');
+insert into City (city_id, name, country) values (11, 'Orlando', 'United States');
+insert into City (city_id, name, country) values (12, 'Miami', 'United States');
+insert into City (city_id, name, country) values (13, 'Phoenix', 'United States');
+insert into City (city_id, name, country) values (14, 'Newark', 'United States');
+insert into City (city_id, name, country) values (15, 'Houston', 'United States');
+insert into City (city_id, name, country) values (16, 'Minneapolis', 'United States');
+insert into City (city_id, name, country) values (17, 'Boston', 'United States');
+insert into City (city_id, name, country) values (18, 'Detroit', 'United States');
+insert into City (city_id, name, country) values (19, 'Fort Lauderdale', 'United States');
+insert into City (city_id, name, country) values (20, 'Washington', 'United States');
 
 -- AIRPORT
-insert into Airport (airport_id, name, city_id) values (1, 'Helsinki Vantaa Airport (HEL)', 34);
-insert into Airport (airport_id, name, city_id) values (2, 'Osaka Airport (KIX)', 7);
-insert into Airport (airport_id, name, city_id) values (3, 'Porto Airport (OPO)', 38);
-insert into Airport (airport_id, name, city_id) values (4, 'Nagoya Airport (NGO)', 29);
-insert into Airport (airport_id, name, city_id) values (5, 'Bangkok Airport (BKK)', 46);
-insert into Airport (airport_id, name, city_id) values (6, 'Brasília International Airport (BSB)', 32);
-insert into Airport (airport_id, name, city_id) values (7, 'Quito Airport (UIO)', 11);
-insert into Airport (airport_id, name, city_id) values (8, 'Sultan Hasanuddin Airport (UPG)', 44);
-insert into Airport (airport_id, name, city_id) values (9, 'Malta International Airport (MLA)', 50);
-insert into Airport (airport_id, name, city_id) values (10, 'Bali Airport (DPS)', 12);
-insert into Airport (airport_id, name, city_id) values (11, 'Copernicus Airport Wroclaw (WRO)', 31);
-insert into Airport (airport_id, name, city_id) values (12, 'Manau International Airport (MAO)', 7);
-insert into Airport (airport_id, name, city_id) values (13, 'Lviv International Airport (LWO)', 26);
-insert into Airport (airport_id, name, city_id) values (14, 'Carriel Sur International Airport (CCP)', 41);
-insert into Airport (airport_id, name, city_id) values (15, 'Dallas Love Field Airport (DAL)', 27);
-insert into Airport (airport_id, name, city_id) values (16, 'Pittsburgh International Airport (PIT)', 23);
-insert into Airport (airport_id, name, city_id) values (17, 'New Chitose Airport (CTS)', 26);
-insert into Airport (airport_id, name, city_id) values (18, 'John Wayne Airport (SNA)', 14);
-insert into Airport (airport_id, name, city_id) values (19, 'Tampa International Airport (TPA)', 29);
-insert into Airport (airport_id, name, city_id) values (20, 'Izmir Airport (ADB)', 22);
-insert into Airport (airport_id, name, city_id) values (21, 'Indianapolis International Airport (IND)', 19);
-insert into Airport (airport_id, name, city_id) values (22, 'Monterrey International Airport (MTY)', 25);
-insert into Airport (airport_id, name, city_id) values (23, 'Athens International Airport (ATH)', 3);
-insert into Airport (airport_id, name, city_id) values (24, 'Jakarta Airport (CGK)', 43);
-insert into Airport (airport_id, name, city_id) values (25, 'Viracopos International Airport (VCP)', 12);
-insert into Airport (airport_id, name, city_id) values (26, 'Surabaya Airport (SUB)', 12);
-insert into Airport (airport_id, name, city_id) values (27, 'Recife International Airport (REC)', 44);
-insert into Airport (airport_id, name, city_id) values (28, 'Kolkata Airport (CCU)', 38);
-insert into Airport (airport_id, name, city_id) values (29, 'Kochi Airport (COK)', 36);
-insert into Airport (airport_id, name, city_id) values (30, 'Tokyo Haneda Airport (HND)', 31);
-insert into Airport (airport_id, name, city_id) values (31, 'Hong Kong International Airport (HKG)', 50);
-insert into Airport (airport_id, name, city_id) values (32, 'Portland International Airport (PDX)', 29);
-insert into Airport (airport_id, name, city_id) values (33, 'Zürich Airport (ZRH)', 11);
-insert into Airport (airport_id, name, city_id) values (34, 'Bogota Airport (BOG)', 20);
-insert into Airport (airport_id, name, city_id) values (35, 'Hamad International Airport (DOH)', 23);
-insert into Airport (airport_id, name, city_id) values (36, 'Dubai International Airport (DXB)', 31);
-insert into Airport (airport_id, name, city_id) values (37, 'Medellin Airport (MDE)', 16);
-insert into Airport (airport_id, name, city_id) values (38, 'Muscat International Airport (MCT)', 24);
-insert into Airport (airport_id, name, city_id) values (39, 'Guayaquil Airport (GYE)', 14);
-insert into Airport (airport_id, name, city_id) values (40, 'Delhi Airport (DEL)', 25);
-insert into Airport (airport_id, name, city_id) values (41, 'Medan Airport (KNO)', 7);
-insert into Airport (airport_id, name, city_id) values (42, 'Afonso Pena International Airport (CWB)', 28);
-insert into Airport (airport_id, name, city_id) values (43, 'Hyderabad Airport (HYD)', 20);
-insert into Airport (airport_id, name, city_id) values (44, 'Ufa International Airport (UFA)', 34);
-insert into Airport (airport_id, name, city_id) values (45, 'Incheon International Airport (ICN)', 8);
-insert into Airport (airport_id, name, city_id) values (46, 'Mumbai Airport (BOM)', 17);
-insert into Airport (airport_id, name, city_id) values (47, 'Tallinn Airport (TLL)', 5);
-insert into Airport (airport_id, name, city_id) values (48, 'Bangalore Airport (BLR)', 8);
-insert into Airport (airport_id, name, city_id) values (49, 'Montevideo Airport (MVD)', 4);
-insert into Airport (airport_id, name, city_id) values (50, 'Singapore Changi Airport (SIN)', 38);
-insert into Airport (airport_id, name, city_id) values (51, 'John F. Kennedy International Airport (JFK)', 51);
+insert into Airport (airport_id, name, code, city_id) values (1, 'Hartsfield–Jackson Atlanta International Airport', 'ATL', 1);
+insert into Airport (airport_id, name, code, city_id) values (2, 'Los Angeles International Airport', 'LAX', 2);
+insert into Airport (airport_id, name, code, city_id) values (3, 'O''Hare International Airport', 'ORD', 3);
+insert into Airport (airport_id, name, code, city_id) values (4, 'Dallas-Fort Worth International Airport', 'DFW', 4);
+insert into Airport (airport_id, name, code, city_id) values (5, 'Denver International Airport', 'DEN', 5);
+insert into Airport (airport_id, name, code, city_id) values (6, 'John F. Kennedy International Airport', 'JFK', 6);
+insert into Airport (airport_id, name, code, city_id) values (7, 'San Francisco International Airport', 'SFO', 7);
+insert into Airport (airport_id, name, code, city_id) values (8, 'McCarran International Airport', 'LAS', 8);
+insert into Airport (airport_id, name, code, city_id) values (9, 'Seattle–Tacoma International Airport', 'SEA', 9);
+insert into Airport (airport_id, name, code, city_id) values (10, 'Charlotte Douglas International Airport', 'CLT', 10);
+insert into Airport (airport_id, name, code, city_id) values (11, 'Orlando International Airport', 'MCO', 11);
+insert into Airport (airport_id, name, code, city_id) values (12, 'Miami International Airport', 'MIA', 12);
+insert into Airport (airport_id, name, code, city_id) values (13, 'Phoenix Sky Harbor International Airport', 'PHX', 13);
+insert into Airport (airport_id, name, code, city_id) values (14, 'Newark Liberty International Airport', 'EWR', 14);
+insert into Airport (airport_id, name, code, city_id) values (15, 'George Bush Intercontinental Houston Airport', 'IAH', 15);
+insert into Airport (airport_id, name, code, city_id) values (16, 'St Paul International Airport', 'MSP', 16);
+insert into Airport (airport_id, name, code, city_id) values (17, 'Logan International Airport', 'BOS', 17);
+insert into Airport (airport_id, name, code, city_id) values (18, 'Detroit Metropolitan Wayne County Airport', 'DTW', 18);
+insert into Airport (airport_id, name, code, city_id) values (19, 'Fort Lauderdale Hollywood International Airport', 'FLL', 19);
+insert into Airport (airport_id, name, code, city_id) values (20, 'Orlando Executive Airport', 'ORL', 11);
+insert into Airport (airport_id, name, code, city_id) values (21, 'LaGuardia Airport', 'LGA', 6);
+insert into Airport (airport_id, name, code, city_id) values (22, 'Ronald Reagan Washington National Airport', 'DCA', 20);
+insert into Airport (airport_id, name, code, city_id) values (23, 'Washington Dulles International Airport', 'IAD', 20);
 
 -- AIRLINE
 insert into Airline (airline_id, name) values (1, 'Brightdog');
@@ -363,38 +304,90 @@ insert into Seat (seat_id, seat_number, is_taken, airplane_id) values (178, '#1c
 insert into Seat (seat_id, seat_number, is_taken, airplane_id) values (179, '#cdf', true, '#6dc00c');
 
 -- FLIGHT
-insert into Flight (flight_id, flight_number, airplane_id, depart_city_id, arrival_city_id, depart_datetime, arrival_datetime, economy_price, business_price) 
-values (1, '#f69', '#f2266d', 12, 49, '2021-07-27', '2021-08-10', 2136.26, 4312.93);
+insert into Flight (flight_id, flight_number, airplane_id, depart_airport_id, arrival_airport_id, depart_datetime, arrival_datetime, economy_price, business_price)
+values (1, '#f69', '#f2266d', 6, 7, '2021-08-05 21:59:59', '2021-08-05 23:59:59', 2136.26, 4312.93);
 
-insert into Flight (flight_id, flight_number, airplane_id, depart_city_id, arrival_city_id, depart_datetime, arrival_datetime, economy_price, business_price) 
-values (2, '#d59', '#ce95ca', 38, 23, '2021-07-28', '2021-08-07', 2114.14, 5894.69);
+insert into Flight (flight_id, flight_number, airplane_id, depart_airport_id, arrival_airport_id, depart_datetime, arrival_datetime, economy_price, business_price)
+values (2, '#f69', '#f2266d', 7, 6, '2021-08-08 18:30:00', '2021-08-08 20:59:59', 2136.26, 4312.93);
 
-insert into Flight (flight_id, flight_number, airplane_id, depart_city_id, arrival_city_id, depart_datetime, arrival_datetime, economy_price, business_price) 
-values (3, '#802', '#17a08e', 22, 41, '2021-07-27', '2021-08-13', 1684.27, 7089.34);
 
-insert into Flight (flight_id, flight_number, airplane_id, depart_city_id, arrival_city_id, depart_datetime, arrival_datetime, economy_price, business_price) 
-values (4, '#393', '#5bdaaf', 27, 6, '2021-07-27', '2021-08-07', 2731.79, 8127.31);
+insert into Flight (flight_id, flight_number, airplane_id, depart_airport_id, arrival_airport_id, depart_datetime, arrival_datetime, economy_price, business_price)
+values (3, '#d59', '#ce95ca', 6, 9, '2021-08-09 16:59:59', '2021-08-09 19:59:59', 2114.14, 5894.69);
 
-insert into Flight (flight_id, flight_number, airplane_id, depart_city_id, arrival_city_id, depart_datetime, arrival_datetime, economy_price, business_price) 
-values (5, '#38c', '#5455f1', 39, 49, '2021-07-28', '2021-08-12', 2004.22, 8255.25);
+insert into Flight (flight_id, flight_number, airplane_id, depart_airport_id, arrival_airport_id, depart_datetime, arrival_datetime, economy_price, business_price)
+values (4, '#d59', '#ce95ca', 9, 6, '2021-08-12 16:59:59', '2021-08-12 19:59:59', 2114.14, 5894.69);
 
-insert into Flight (flight_id, flight_number, airplane_id, depart_city_id, arrival_city_id, depart_datetime, arrival_datetime, economy_price, business_price) 
-values (6, '#a3e', '#d9bb28', 24, 27, '2021-07-28', '2021-08-08', 2867.05, 5991.74);
 
-insert into Flight (flight_id, flight_number, airplane_id, depart_city_id, arrival_city_id, depart_datetime, arrival_datetime, economy_price, business_price) 
-values (7, '#e35', '#fa8ba8', 34, 45, '2021-07-28', '2021-08-07', 573.47, 6961.45);
 
-insert into Flight (flight_id, flight_number, airplane_id, depart_city_id, arrival_city_id, depart_datetime, arrival_datetime, economy_price, business_price) 
-values (8, '#1d9', '#97dc29', 33, 43, '2021-07-28', '2021-08-11', 1786.6, 7098.23);
+insert into Flight (flight_id, flight_number, airplane_id, depart_airport_id, arrival_airport_id, depart_datetime, arrival_datetime, economy_price, business_price)
+values (5, '#802', '#17a08e', 4, 14, '2021-08-08 22:59:59', '2021-08-08 23:59:59', 1684.27, 7089.34);
 
-insert into Flight (flight_id, flight_number, airplane_id, depart_city_id, arrival_city_id, depart_datetime, arrival_datetime, economy_price, business_price) 
-values (9, '#07a', '#04c241', 17, 34, '2021-07-27', '2021-08-10', 1971.46, 3858.91);
+insert into Flight (flight_id, flight_number, airplane_id, depart_airport_id, arrival_airport_id, depart_datetime, arrival_datetime, economy_price, business_price)
+values (6, '#802', '#17a08e', 14, 4, '2021-08-12 23:59:59', '2021-08-13 01:59:59', 1684.27, 7089.34);
 
-insert into Flight (flight_id, flight_number, airplane_id, depart_city_id, arrival_city_id, depart_datetime, arrival_datetime, economy_price, business_price) 
-values (10, '#896', '#d8fb13', 4, 38, '2021-07-27', '2021-08-09', 1238.66, 3863.31);
 
-insert into Flight (flight_id, flight_number, airplane_id, depart_city_id, arrival_city_id, depart_datetime, arrival_datetime, economy_price, business_price) 
-values (11, '#b3a', '#6dc00c', 46, 39, '2021-07-28', '2021-08-06', 2419.63, 5758.02);
+
+insert into Flight (flight_id, flight_number, airplane_id, depart_airport_id, arrival_airport_id, depart_datetime, arrival_datetime, economy_price, business_price)
+values (7, '#393', '#5bdaaf', 7, 8, '2021-08-07 08:59:59', '2021-08-07 12:59:59', 2731.79, 8127.31);
+
+insert into Flight (flight_id, flight_number, airplane_id, depart_airport_id, arrival_airport_id, depart_datetime, arrival_datetime, economy_price, business_price)
+values (8, '#393', '#5bdaaf', 8, 7, '2021-08-10 11:59:59', '2021-08-10 15:59:59', 2731.79, 8127.31);
+
+
+
+insert into Flight (flight_id, flight_number, airplane_id, depart_airport_id, arrival_airport_id, depart_datetime, arrival_datetime, economy_price, business_price)
+values (9, '#38c', '#5455f1', 20, 1, '2021-08-12 20:59:59', '2021-08-12 23:59:59', 2004.22, 8255.25);
+
+insert into Flight (flight_id, flight_number, airplane_id, depart_airport_id, arrival_airport_id, depart_datetime, arrival_datetime, economy_price, business_price)
+values (10, '#38c', '#5455f1', 1, 20, '2021-08-15 14:59:59', '2021-08-15 17:59:59', 2004.22, 8255.25);
+
+
+
+insert into Flight (flight_id, flight_number, airplane_id, depart_airport_id, arrival_airport_id, depart_datetime, arrival_datetime, economy_price, business_price)
+values (11, '#a3e', '#d9bb28', 2, 3, '2021-08-08 12:59:59', '2021-08-08 16:59:59', 2867.05, 5991.74);
+
+insert into Flight (flight_id, flight_number, airplane_id, depart_airport_id, arrival_airport_id, depart_datetime, arrival_datetime, economy_price, business_price)
+values (12, '#a3e', '#d9bb28', 3, 2, '2021-08-10 19:59:59', '2021-08-10 23:59:59', 2867.05, 5991.74);
+
+
+
+insert into Flight (flight_id, flight_number, airplane_id, depart_airport_id, arrival_airport_id, depart_datetime, arrival_datetime, economy_price, business_price)
+values (13, '#e35', '#fa8ba8', 10, 5, '2021-08-11 16:59:59', '2021-08-11 19:59:59', 573.47, 6961.45);
+
+insert into Flight (flight_id, flight_number, airplane_id, depart_airport_id, arrival_airport_id, depart_datetime, arrival_datetime, economy_price, business_price)
+values (14, '#e35', '#fa8ba8', 5, 10, '2021-08-12 18:59:59', '2021-08-12 21:59:59', 573.47, 6961.45);
+
+
+
+insert into Flight (flight_id, flight_number, airplane_id, depart_airport_id, arrival_airport_id, depart_datetime, arrival_datetime, economy_price, business_price)
+values (15, '#1d9', '#97dc29', 11, 19, '2021-08-08 16:59:59', '2021-08-08 19:59:59', 1786.6, 7098.23);
+
+insert into Flight (flight_id, flight_number, airplane_id, depart_airport_id, arrival_airport_id, depart_datetime, arrival_datetime, economy_price, business_price)
+values (16, '#1d9', '#97dc29', 19, 11, '2021-08-11 12:59:59', '2021-08-11 15:59:59', 1786.6, 7098.23);
+
+
+
+insert into Flight (flight_id, flight_number, airplane_id, depart_airport_id, arrival_airport_id, depart_datetime, arrival_datetime, economy_price, business_price)
+values (17, '#07a', '#04c241', 21, 11, '2021-08-06 12:59:59', '2021-08-06 15:59:59', 1971.46, 3858.91);
+
+insert into Flight (flight_id, flight_number, airplane_id, depart_airport_id, arrival_airport_id, depart_datetime, arrival_datetime, economy_price, business_price)
+values (18, '#07a', '#04c241', 11, 21, '2021-08-09 19:59:59', '2021-08-09 23:59:59', 1971.46, 3858.91);
+
+
+
+insert into Flight (flight_id, flight_number, airplane_id, depart_airport_id, arrival_airport_id, depart_datetime, arrival_datetime, economy_price, business_price)
+values (19, '#896', '#d8fb13', 4, 22, '2021-08-06 12:59:59', '2021-08-06 17:59:59', 1238.66, 3863.31);
+
+insert into Flight (flight_id, flight_number, airplane_id, depart_airport_id, arrival_airport_id, depart_datetime, arrival_datetime, economy_price, business_price)
+values (20, '#896', '#d8fb13', 22, 4, '2021-08-09 12:59:59', '2021-08-09 18:59:59', 1238.66, 3863.31);
+
+
+
+insert into Flight (flight_id, flight_number, airplane_id, depart_airport_id, arrival_airport_id, depart_datetime, arrival_datetime, economy_price, business_price)
+values (21, '#b3a', '#6dc00c', 6, 11, '2021-08-05 06:59:59', '2021-08-05 10:59:59', 2419.63, 5758.02);
+
+insert into Flight (flight_id, flight_number, airplane_id, depart_airport_id, arrival_airport_id, depart_datetime, arrival_datetime, economy_price, business_price)
+values (22, '#b3a', '#6dc00c', 11, 6, '2021-08-08 08:59:59', '2021-08-08 12:59:59', 2419.63, 5758.02);
 
 -- USER
 insert into User (user_id, first_name, last_name, phone_number, email) values (1, 'Richmond', 'Leffek', '(241) 4085332', 'rleffek0@themeforest.net');
@@ -404,7 +397,3 @@ insert into User (user_id, first_name, last_name, phone_number, email) values (4
 insert into User (user_id, first_name, last_name, phone_number, email) values (5, 'Ranna', 'Klimentov', '(952) 2553259', 'rklimentov4@example.com');
 
 -- TICKET
-
-
-
-

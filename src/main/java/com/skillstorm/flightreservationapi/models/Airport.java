@@ -23,7 +23,7 @@ public class Airport {
 
     @ManyToOne
     @JoinColumn(name = "city_id")
-    @JsonBackReference
+    //@JsonBackReference
     //@JsonIdentityReference(alwaysAsId = true)
     private City city;
 
