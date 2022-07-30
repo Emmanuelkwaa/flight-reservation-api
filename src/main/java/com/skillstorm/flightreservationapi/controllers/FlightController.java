@@ -1,16 +1,10 @@
 package com.skillstorm.flightreservationapi.controllers;
 
+import com.skillstorm.flightreservationapi.models.Booking;
 import com.skillstorm.flightreservationapi.services.implementation.FlightService;
 import com.skillstorm.flightreservationapi.services.unitOfWork.IUnitOfWork;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.skillstorm.flightreservationapi.models.Flight;
 
@@ -37,6 +31,12 @@ public class FlightController {
 	public Optional<Flight> getFlightById(@PathVariable int id) {
 		Optional<Flight> flight = unitOfWork.flight().findById(id);
 		return flight;
+	}
+
+	@GetMapping("/flightByCities")
+	public List<Flight> getFlightByDepartAndArriveCity(@RequestBody Booking bookingDetails) {
+		// continue from here
+		return null;
 	}
 	
 	@PostMapping
