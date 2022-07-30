@@ -1,11 +1,7 @@
 package com.skillstorm.flightreservationapi.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIdentityReference;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 @Entity
@@ -21,6 +17,10 @@ public class Airport {
     @NotBlank
     private String name;
 
+    @Column
+    @NotBlank
+    private String code;
+
     @ManyToOne
     @JoinColumn(name = "city_id")
     //@JsonBackReference
@@ -30,14 +30,16 @@ public class Airport {
     public Airport() {
     }
 
-    public Airport(String name, City city) {
+    public Airport(String name, String code, City city) {
         this.name = name;
+        this.code = code;
         this.city = city;
     }
 
-    public Airport(int id, String name, City city) {
+    public Airport(int id, String name, String code, City city) {
         this.id = id;
         this.name = name;
+        this.code = code;
         this.city = city;
     }
 
@@ -55,6 +57,14 @@ public class Airport {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public City getCity() {
@@ -83,6 +93,7 @@ public class Airport {
         return "Airport{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", code='" + code + '\'' +
                 ", city=" + city +
                 '}';
     }
