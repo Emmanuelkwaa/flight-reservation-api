@@ -1,5 +1,6 @@
 package com.skillstorm.flightreservationapi.models;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Booking {
@@ -8,12 +9,12 @@ public class Booking {
     private String tripClass;
     private String departCity;
     private String arrivalCity;
-    private Date date;
+    private int date;
 
     public Booking() {
     }
 
-    public Booking(String tripType, int numberOfPassengers, String tripClass, String departCity, String arrivalCity, Date date) {
+    public Booking(String tripType, int numberOfPassengers, String tripClass, String departCity, String arrivalCity, int date) {
         this.tripType = tripType;
         this.numberOfPassengers = numberOfPassengers;
         this.tripClass = tripClass;
@@ -62,11 +63,11 @@ public class Booking {
         this.arrivalCity = arrivalCity;
     }
 
-    public Date getDate() {
+    public int getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(int date) {
         this.date = date;
     }
 
