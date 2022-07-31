@@ -7,6 +7,7 @@ import com.skillstorm.flightreservationapi.models.Flight;
 import com.skillstorm.flightreservationapi.services.interfaces.FlightServiceInterface;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 @Transactional
@@ -15,5 +16,9 @@ public class FlightService extends GenericRepositoryImpl<Flight, Integer> implem
 
     public FlightService(FlightRepository flightRepository) {
         super(flightRepository);
+    }
+
+    public List<Flight> findByCities(String departAirportCity, String arrivalAirportCity) {
+        return flightRepository.findByDepartAirport_CityAndArrivalAirport_City(departAirportCity, arrivalAirportCity);
     }
 }

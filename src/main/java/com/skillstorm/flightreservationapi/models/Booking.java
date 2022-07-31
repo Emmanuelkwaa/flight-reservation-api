@@ -6,14 +6,14 @@ public class Booking {
     private String tripType;
     private int numberOfPassengers;
     private String tripClass;
-    private City departCity;
-    private City arrivalCity;
+    private String departCity;
+    private String arrivalCity;
     private Date date;
 
     public Booking() {
     }
 
-    public Booking(String tripType, int numberOfPassengers, String tripClass, City departCity, City arrivalCity, Date date) {
+    public Booking(String tripType, int numberOfPassengers, String tripClass, String departCity, String arrivalCity, Date date) {
         this.tripType = tripType;
         this.numberOfPassengers = numberOfPassengers;
         this.tripClass = tripClass;
@@ -46,19 +46,19 @@ public class Booking {
         this.tripClass = tripClass;
     }
 
-    public City getDepartCity() {
+    public String getDepartCity() {
         return departCity;
     }
 
-    public void setDepartCity(City departCity) {
+    public void setDepartCity(String departCity) {
         this.departCity = departCity;
     }
 
-    public City getArrivalCity() {
+    public String getArrivalCity() {
         return arrivalCity;
     }
 
-    public void setArrivalCity(City arrivalCity) {
+    public void setArrivalCity(String arrivalCity) {
         this.arrivalCity = arrivalCity;
     }
 
