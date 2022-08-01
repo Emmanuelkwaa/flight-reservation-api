@@ -1,6 +1,6 @@
 package com.skillstorm.flightreservationapi.controllers;
 
-import com.skillstorm.flightreservationapi.models.Flight;
+import com.skillstorm.flightreservationapi.services.interfaces.CityServiceInterface;
 import com.skillstorm.flightreservationapi.services.unitOfWork.IUnitOfWork;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -20,10 +20,12 @@ import java.util.List;
 @CrossOrigin("*")
 @RequestMapping("/api/v1/cities")
 public class CityController {
+	private final CityServiceInterface cityService;
 	private final IUnitOfWork unitOfWork;
 
 	@Autowired
-	public CityController(IUnitOfWork unitOfWork) {
+	public CityController(CityServiceInterface cityService, IUnitOfWork unitOfWork) {
+		this.cityService = cityService;
 		this.unitOfWork = unitOfWork;
 	}
 
@@ -32,24 +34,31 @@ public class CityController {
 		return unitOfWork.city().findAll();
 	}
 
-	@GetMapping("/{id}")
-	public City findById(@PathVariable int id) {
-		return new City();
+	@GetMapping("/{name}")
+	public City findCityByName(@PathVariable String name) {
+		System.out.println("finding city name");
+		City city = unitOfWork.city().findCityByName(name);
+		return city;
 	}
-	
-	@PostMapping("/{id}")
-	public City createCity(@PathVariable int id) {
-		return new City(); 
-	}
-	
-	@PutMapping("/{id}") 
-	public City updateCity(@PathVariable int id) {
-		return new City();
-	}
-	
-	@DeleteMapping("/{id}")
-	public void deleteCity(@PathVariable int id) {
 
-	}
+//	@GetMapping("/{id}")
+//	public City findById(@PathVariable int id) {
+//		return new City();
+//	}
+//
+//	@PostMapping("/{id}")
+//	public City createCity(@PathVariable int id) {
+//		return new City();
+//	}
+//
+//	@PutMapping("/{id}")
+//	public City updateCity(@PathVariable int id) {
+//		return new City();
+//	}
+//
+//	@DeleteMapping("/{id}")
+//	public void deleteCity(@PathVariable int id) {
+//
+//	}
 
 }
