@@ -33,10 +33,10 @@ public class FlightController {
 		return flight;
 	}
 
-	@GetMapping("/flightByCities")
-	public List<Flight> getFlightByDepartAndArriveCity(@RequestBody Booking bookingDetails) {
+	@PostMapping("/flightByCities")
+	public List<Booking> getFlightByDepartAndArriveCity(@RequestBody Booking bookingDetails) {
 		//return unitOfWork.flight().findByCities(bookingDetails.getDepartCity(), bookingDetails.getArrivalCity());
-		return (List<Flight>) bookingDetails;
+		return (List<Booking>) bookingDetails;
 	}
 	
 	@PostMapping

@@ -11,9 +11,6 @@ public class Booking {
     private String arrivalCity;
     private int date;
 
-    public Booking() {
-    }
-
     public Booking(String tripType, int numberOfPassengers, String tripClass, String departCity, String arrivalCity, int date) {
         this.tripType = tripType;
         this.numberOfPassengers = numberOfPassengers;
@@ -77,8 +74,8 @@ public class Booking {
                 "tripType='" + tripType + '\'' +
                 ", numberOfPassengers=" + numberOfPassengers +
                 ", tripClass='" + tripClass + '\'' +
-                ", departCity=" + departCity +
-                ", arrivalCity=" + arrivalCity +
+                ", departCity='" + departCity + '\'' +
+                ", arrivalCity='" + arrivalCity + '\'' +
                 ", date=" + date +
                 '}';
     }
