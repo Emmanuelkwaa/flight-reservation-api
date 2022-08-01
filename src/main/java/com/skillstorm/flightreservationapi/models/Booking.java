@@ -9,9 +9,9 @@ public class Booking {
     private String tripClass;
     private String departCity;
     private String arrivalCity;
-    private int date;
+    private Date date;
 
-    public Booking(String tripType, int numberOfPassengers, String tripClass, String departCity, String arrivalCity, int date) {
+    public Booking(String tripType, int numberOfPassengers, String tripClass, String departCity, String arrivalCity, Date date) {
         this.tripType = tripType;
         this.numberOfPassengers = numberOfPassengers;
         this.tripClass = tripClass;
@@ -60,11 +60,11 @@ public class Booking {
         this.arrivalCity = arrivalCity;
     }
 
-    public int getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(int date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
