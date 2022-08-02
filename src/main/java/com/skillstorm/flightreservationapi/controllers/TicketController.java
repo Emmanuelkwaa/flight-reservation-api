@@ -23,8 +23,8 @@ public class TicketController {
 	
 	@PostMapping
 	public Ticket createTicket(@RequestBody Ticket ticket) {
-		//return this.unitOfWork.ticket().save(ticket);
-		return ticket;
+
+		return this.unitOfWork.ticket().save(ticket);
 	}
 	
 	@PutMapping("/{id}") 
