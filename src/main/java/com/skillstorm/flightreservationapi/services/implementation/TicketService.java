@@ -59,12 +59,12 @@ public class TicketService extends GenericRepositoryImpl<Ticket, Integer> implem
 					ticket.setSeat(seat);
 					ticket.getUser().setId(user.getId());
 					Ticket createdTicket = ticketRepository.save(ticket);
-					if(createdTicket == null) {
+					if(createdTicket != null) {
 						tickets.add(createdTicket);
 					}
-
-					return tickets;
 				}
+
+				return tickets;
 			}
 
 

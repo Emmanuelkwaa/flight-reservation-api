@@ -14,7 +14,7 @@ import java.util.Optional;
 public abstract class GenericRepositoryImpl<T, ID extends Serializable> implements GenericService<T, ID> {
     private final GenericRepository<T, ID> genericRepository;
 
-    @Autowired
+
     public GenericRepositoryImpl(GenericRepository<T, ID> genericRepository) {
         this.genericRepository = genericRepository;
     }
