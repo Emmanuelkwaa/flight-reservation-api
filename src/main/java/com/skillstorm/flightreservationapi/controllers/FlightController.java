@@ -28,9 +28,9 @@ public class FlightController {
 	}
 
 	@GetMapping("/{id}")
-	public Optional<Flight> getFlightById(@PathVariable int id) {
+	public Flight getFlightById(@PathVariable int id) {
 		Optional<Flight> flight = unitOfWork.flight().findById(id);
-		return flight;
+		return flight.isPresent() ? flight.get() : null;
 	}
 
 	@PostMapping("/flightByCities")
@@ -44,7 +44,7 @@ public class FlightController {
 	}
 	
 	@PutMapping("/{id}") 
-	public Flight updateFlight(@PathVariable int id) {
+	public Flight updateFlight(@RequestBody Flight flight, @PathVariable int id) {
 		return new Flight();
 	}
 	
