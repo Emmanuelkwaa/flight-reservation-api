@@ -125,15 +125,15 @@ public class Airplane {
         return Objects.hash(id);
     }
 
-    @Override
-    public String toString() {
-        return "Airplane{" +
-                "id='" + id + '\'' +
-                ", currentCapacity=" + currentCapacity +
-                ", maxCapacity=" + maxCapacity +
-                ", model='" + model + '\'' +
-                ", seats=" + seats +
-                ", airline=" + airline +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Airplane{" +
+//                "id='" + id + '\'' +
+//                ", currentCapacity=" + currentCapacity +
+//                ", maxCapacity=" + maxCapacity +
+//                ", model='" + model + '\'' +
+//                ", seats=" + seats +
+//                ", airline=" + airline +
+//                '}';
+//    }
 }

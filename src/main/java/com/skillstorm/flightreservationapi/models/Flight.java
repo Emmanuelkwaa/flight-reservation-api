@@ -166,18 +166,18 @@ public class Flight {
         this.airplane = airplane;
     }
 
-    @Override
-    public String toString() {
-        return "Flight{" +
-                "id=" + id +
-                ", flightNumber='" + flightNumber + '\'' +
-                ", departAirport=" + departAirport +
-                ", arrivalAirport=" + arrivalAirport +
-                ", departDateTime=" + departDateTime +
-                ", arrivalDateTime=" + arrivalDateTime +
-                ", economyPrice=" + economyPrice +
-                ", businessPrice=" + businessPrice +
-                ", airplane=" + airplane +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Flight{" +
+//                "id=" + id +
+//                ", flightNumber='" + flightNumber + '\'' +
+//                ", departAirport=" + departAirport +
+//                ", arrivalAirport=" + arrivalAirport +
+//                ", departDateTime=" + departDateTime +
+//                ", arrivalDateTime=" + arrivalDateTime +
+//                ", economyPrice=" + economyPrice +
+//                ", businessPrice=" + businessPrice +
+//                ", airplane=" + airplane +
+//                '}';
+//    }
 }

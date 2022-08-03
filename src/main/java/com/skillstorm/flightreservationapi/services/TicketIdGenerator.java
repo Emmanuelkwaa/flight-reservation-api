@@ -35,7 +35,7 @@ public class TicketIdGenerator implements IdentifierGenerator {
 
             if(rs.next())
             {
-                int id=rs.getInt(1)+101;
+                int id=rs.getInt(1);
                 String generatedId = prefix + nanaId + new Integer(id).toString();
                 System.out.println("Generated Id: " + generatedId);
                 return generatedId;

@@ -47,7 +47,7 @@ CREATE TABLE `Airplane` (
 -- Seat
 DROP TABLE IF EXISTS Seat;
 CREATE TABLE `Seat` (
-	`seat_id` TINYINT unsigned NOT NULL,
+	`seat_id` TINYINT unsigned AUTO_INCREMENT NOT NULL,
 	`seat_number` VARCHAR(5) NOT NULL,
 	`is_taken` BOOLEAN NOT NULL,
 	`airplane_id` VARCHAR(20) NOT NULL,
@@ -88,7 +88,7 @@ CREATE TABLE `Flight` (
 -- User
 DROP TABLE IF EXISTS User;
 CREATE TABLE `User` (
-	`user_id` INT unsigned NOT NULL,
+	`user_id` INT unsigned AUTO_INCREMENT NOT NULL,
 	`first_name` VARCHAR(50) NOT NULL,
 	`last_name` VARCHAR(50) NOT NULL,
 	`phone_number` VARCHAR(20) NOT NULL,
@@ -99,7 +99,7 @@ CREATE TABLE `User` (
 -- Ticket
 DROP TABLE IF EXISTS Ticket;
 CREATE TABLE `Ticket` (
-	`ticket_id` VARCHAR(15) NOT NULL,
+	`ticket_id` INT unsigned AUTO_INCREMENT NOT NULL,
     `ticket_type` VARCHAR(15) NOT NULL,
 	`flight_id` INT unsigned NOT NULL,
 	`user_id` INT unsigned NOT NULL,
@@ -122,3 +122,8 @@ CREATE TABLE `Ticket` (
     REFERENCES Seat (seat_id)
     ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+ALTER TABLE `ticket` ALTER `ticket_id` SET DEFAULT 1110;
+ALTER TABLE ticket AUTO_INCREMENT = 1110;
+ALTER TABLE `seat` ALTER `seat_id` SET DEFAULT 1;
+ALTER TABLE seat AUTO_INCREMENT = 1;

@@ -1,6 +1,5 @@
 package com.skillstorm.flightreservationapi.data.repositories;
 
-import com.skillstorm.flightreservationapi.data.repositories.GenericRepository;
 import com.skillstorm.flightreservationapi.services.interfaces.GenericService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
