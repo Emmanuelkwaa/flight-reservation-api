@@ -18,6 +18,7 @@ import java.util.Optional;
 @RequestMapping("api/v1/tickets")
 public class TicketController {
 
+	@Autowired
 	private final IUnitOfWork unitOfWork;
 	private TicketServiceInterface ticketServiceInterface;
 
@@ -29,8 +30,7 @@ public class TicketController {
 
 	@GetMapping("/{id}")
 	public Ticket findById(@PathVariable int id) {
-		Optional<Ticket> ticket = unitOfWork.ticket().findById(id);
-		return ticket.isPresent() ? ticket.get() : null;
+		return ticketServiceInterface.findById(id).get();
 	}
 	
 	@PostMapping
