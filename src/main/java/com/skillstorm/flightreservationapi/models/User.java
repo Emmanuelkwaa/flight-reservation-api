@@ -43,6 +43,14 @@ public class User {
         this.ticket = ticket;
     }
 
+    public User(Integer id, String firstName, String lastName, String phoneNumber, String email) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
+
     public User(int id, String firstName, String lastName, String phoneNumber, String email, Set<Ticket> ticket) {
         this.id = id;
         this.firstName = firstName;

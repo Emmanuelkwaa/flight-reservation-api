@@ -13,10 +13,7 @@ import com.skillstorm.flightreservationapi.data.repositories.TicketRepository;
 import com.skillstorm.flightreservationapi.models.Ticket;
 import com.skillstorm.flightreservationapi.services.interfaces.TicketServiceInterface;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 @Service
 @Transactional
@@ -29,6 +26,40 @@ public class TicketService extends GenericRepositoryImpl<Ticket, Integer> implem
 		super(ticketRepository);
 		this.ticketRepository = ticketRepository;
 		this.userRepository = userRepository;
+	}
+
+	@Override
+	public Ticket update(Ticket ticket) {
+//		User newUser = new User(
+//				0,
+//				ticket.getUser().getFirstName(),
+//				ticket.getUser().getLastName(),
+//				ticket.getUser().getEmail(),
+//				ticket.getUser().getPhoneNumber()
+//		);
+//
+//		User user = userRepository.save(newUser);
+//		if (user != null) {
+//			ticket.setUser(new User(
+//					user.getId(),
+//					user.getFirstName(),
+//					user.getLastName(),
+//					user.getEmail(),
+//					user.getPhoneNumber()
+//			));
+//
+//			Ticket returnTicket = ticketRepository.save(ticket);
+//			if (returnTicket != null) {
+//				return returnTicket;
+//			}
+//		}
+
+		Ticket returnTicket = ticketRepository.save(ticket);
+		if (returnTicket != null) {
+			return returnTicket;
+		}
+
+		return null;
 	}
 
 	@Override

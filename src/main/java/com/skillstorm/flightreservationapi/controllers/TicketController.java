@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.skillstorm.flightreservationapi.models.Ticket;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -55,9 +56,16 @@ public class TicketController {
 		return new ResponseEntity<>(createdTickets, HttpStatus.CREATED);
 	}
 	
-	@PutMapping("/{id}") 
-	public Ticket updateTicket(@PathVariable int id) {
-		return new Ticket();
+	@PutMapping("/{id}")
+	public ResponseEntity<List<Ticket>> updateTicket(@PathVariable int id, @RequestBody Ticket ticket) {
+		Ticket returnTicket = this.unitOfWork.ticket().update(ticket);
+		if (returnTicket != null) {
+			List<Ticket> tickets = new ArrayList<>();
+			tickets.add(returnTicket);
+			return new ResponseEntity<>(tickets, HttpStatus.OK);
+		}
+
+		return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 	
 	@DeleteMapping("/{id}")
