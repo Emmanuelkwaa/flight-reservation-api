@@ -18,7 +18,6 @@ import java.util.Optional;
 @RequestMapping("api/v1/tickets")
 public class TicketController {
 
-	@Autowired
 	private final IUnitOfWork unitOfWork;
 	private TicketServiceInterface ticketServiceInterface;
 
@@ -63,6 +62,8 @@ public class TicketController {
 	
 	@DeleteMapping("/{id}")
 	public boolean deleteTicket(@PathVariable int id) {
-		return unitOfWork.ticket().delete(id);
+		// returns false on delete
+		boolean isDeleted = unitOfWork.ticket().delete(id);
+		return isDeleted;
 	}
 }

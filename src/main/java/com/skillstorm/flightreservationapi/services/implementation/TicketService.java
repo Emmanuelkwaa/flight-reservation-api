@@ -56,9 +56,18 @@ public class TicketService extends GenericRepositoryImpl<Ticket, Integer> implem
 			if(user != null) {
 				for (Seat seat : randomSelectedSeat) {
 					seat.setTaken(true);
-					ticket.setSeat(seat);
-					ticket.getUser().setId(user.getId());
-					Ticket createdTicket = ticketRepository.save(ticket);
+					Ticket newTicket = new Ticket(
+							ticket.getTicketType(),
+							ticket.getFlight(),
+							user,
+							ticket.getDateOfPurchase(),
+							seat,
+							ticket.getFrom(),
+							ticket.getTo(),
+							ticket.getPrice(),
+							ticket.getNumberOfPassenger()
+							);
+					Ticket createdTicket = ticketRepository.save(newTicket);
 					if(createdTicket != null) {
 						tickets.add(createdTicket);
 					}
@@ -90,6 +99,7 @@ public class TicketService extends GenericRepositoryImpl<Ticket, Integer> implem
 	@Override
 	public boolean delete(int id) {
 		ticketRepository.deleteById(id);
+		// returns false if deleted
 		return ticketRepository.findById(id).isPresent();
 	}
 }
