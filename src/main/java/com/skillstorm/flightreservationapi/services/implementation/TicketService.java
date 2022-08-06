@@ -30,33 +30,31 @@ public class TicketService extends GenericRepositoryImpl<Ticket, Integer> implem
 
 	@Override
 	public Ticket update(Ticket ticket) {
-//		User newUser = new User(
-//				0,
-//				ticket.getUser().getFirstName(),
-//				ticket.getUser().getLastName(),
-//				ticket.getUser().getEmail(),
-//				ticket.getUser().getPhoneNumber()
-//		);
-//
-//		User user = userRepository.save(newUser);
-//		if (user != null) {
-//			ticket.setUser(new User(
-//					user.getId(),
-//					user.getFirstName(),
-//					user.getLastName(),
-//					user.getEmail(),
-//					user.getPhoneNumber()
-//			));
-//
-//			Ticket returnTicket = ticketRepository.save(ticket);
-//			if (returnTicket != null) {
-//				return returnTicket;
-//			}
-//		}
+		Set<Ticket> ticketSet = new HashSet<>();
+		ticketSet.add(ticket);
+		User newUser = new User(
+				0,
+				ticket.getUser().getFirstName(),
+				ticket.getUser().getLastName(),
+				ticket.getUser().getEmail(),
+				ticket.getUser().getPhoneNumber()
+//				ticketSet
+		);
 
-		Ticket returnTicket = ticketRepository.save(ticket);
-		if (returnTicket != null) {
-			return returnTicket;
+		User user = userRepository.save(newUser);
+		if (user != null) {
+			ticket.setUser(new User(
+					user.getId(),
+					user.getFirstName(),
+					user.getLastName(),
+					user.getEmail(),
+					user.getPhoneNumber()
+			));
+
+			Ticket returnTicket = ticketRepository.save(ticket);
+			if (returnTicket != null) {
+				return returnTicket;
+			}
 		}
 
 		return null;
@@ -129,8 +127,17 @@ public class TicketService extends GenericRepositoryImpl<Ticket, Integer> implem
 
 	@Override
 	public boolean delete(int id) {
-		ticketRepository.deleteById(id);
-		// returns false if deleted
-		return ticketRepository.findById(id).isPresent();
+		Ticket ticket = ticketRepository.findById(id).get();
+		if (ticket != null) {
+			ticket.getSeat().setTaken(false);
+
+			ticketRepository.save(ticket);
+			ticketRepository.deleteById(id);
+			// returns false if deleted
+			return ticketRepository.findById(id).isPresent();
+		}
+
+		//Ticket was not deleted
+		return true;
 	}
 }
