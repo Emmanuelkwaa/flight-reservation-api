@@ -40,7 +40,7 @@ public class UnitOfWork implements IUnitOfWork {
         this.airportService = new AirportService(airportRepository);
         this.userService = new UserService(userRepository);
         this.seatService = new SeatService(seatRepository);
-		this.ticketService = new TicketService(ticketRepository, userRepository);
+		this.ticketService = new TicketService(ticketRepository, userRepository, seatRepository);
     }
     
    

@@ -21,7 +21,7 @@ public class Seat {
     private String seatNumber;
 
     @Column(name = "is_taken")
-    @NotBlank
+    @NotNull
     private boolean isTaken;
 
     @NotNull

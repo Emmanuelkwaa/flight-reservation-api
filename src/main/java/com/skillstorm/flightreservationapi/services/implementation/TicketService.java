@@ -2,6 +2,7 @@ package com.skillstorm.flightreservationapi.services.implementation;
 
 import javax.transaction.Transactional;
 
+import com.skillstorm.flightreservationapi.data.repositories.SeatRepository;
 import com.skillstorm.flightreservationapi.data.repositories.UserRepository;
 import com.skillstorm.flightreservationapi.models.Seat;
 import com.skillstorm.flightreservationapi.models.User;
@@ -18,14 +19,16 @@ import java.util.*;
 @Service
 @Transactional
 public class TicketService extends GenericRepositoryImpl<Ticket, Integer> implements TicketServiceInterface{
-	private TicketRepository ticketRepository;
-	private UserRepository userRepository;
+	private final TicketRepository ticketRepository;
+	private final UserRepository userRepository;
+	private final SeatRepository seatRepository;
 
 	@Autowired
-	public TicketService(TicketRepository ticketRepository, UserRepository userRepository) {
+	public TicketService(TicketRepository ticketRepository, UserRepository userRepository, SeatRepository seatRepository) {
 		super(ticketRepository);
 		this.ticketRepository = ticketRepository;
 		this.userRepository = userRepository;
+		this.seatRepository = seatRepository;
 	}
 
 	@Override
@@ -85,12 +88,13 @@ public class TicketService extends GenericRepositoryImpl<Ticket, Integer> implem
 			if(user != null) {
 				for (Seat seat : randomSelectedSeat) {
 					seat.setTaken(true);
+					Seat savedSeat = seatRepository.save(seat);
 					Ticket newTicket = new Ticket(
 							ticket.getTicketType(),
 							ticket.getFlight(),
 							user,
 							ticket.getDateOfPurchase(),
-							seat,
+							savedSeat,
 							ticket.getFrom(),
 							ticket.getTo(),
 							ticket.getPrice(),
@@ -130,7 +134,9 @@ public class TicketService extends GenericRepositoryImpl<Ticket, Integer> implem
 		Ticket ticket = ticketRepository.findById(id).get();
 		if (ticket != null) {
 			ticket.getSeat().setTaken(false);
+			Seat savedSeat = seatRepository.save(ticket.getSeat());
 
+			ticket.setSeat(savedSeat);
 			ticketRepository.save(ticket);
 			ticketRepository.deleteById(id);
 			// returns false if deleted
