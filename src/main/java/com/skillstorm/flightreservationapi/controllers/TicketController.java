@@ -1,5 +1,6 @@
 package com.skillstorm.flightreservationapi.controllers;
 
+import com.skillstorm.flightreservationapi.models.Flight;
 import com.skillstorm.flightreservationapi.models.Reservation;
 import com.skillstorm.flightreservationapi.services.interfaces.TicketServiceInterface;
 import com.skillstorm.flightreservationapi.services.unitOfWork.IUnitOfWork;
@@ -30,7 +31,8 @@ public class TicketController {
 
 	@GetMapping("/{id}")
 	public Ticket findById(@PathVariable int id) {
-		return ticketServiceInterface.findById(id).get();
+		Optional<Ticket> ticket = unitOfWork.ticket().findById(id);
+		return ticket.isPresent() ? ticket.get() : null;
 	}
 	
 	@PostMapping

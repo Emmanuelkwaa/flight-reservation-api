@@ -29,35 +29,25 @@ public class User {
     @NotBlank
     private String email;
 
-    @OneToMany(mappedBy = "user")
-    private Set<Ticket> ticket;
+//    @OneToMany(mappedBy = "user")
+//    private Set<Ticket> ticket;
 
     public User() {
     }
 
-    public User(String firstName, String lastName, String phoneNumber, String email, Set<Ticket> ticket) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.ticket = ticket;
-    }
-
-    public User(Integer id, String firstName, String lastName, String phoneNumber, String email) {
-        this.id = id;
+    public User(String firstName, String lastName, String phoneNumber, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.email = email;
     }
 
-    public User(int id, String firstName, String lastName, String phoneNumber, String email, Set<Ticket> ticket) {
+    public User(int id, String firstName, String lastName, String phoneNumber, String email) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.email = email;
-        this.ticket = ticket;
     }
 
     public int getId() {
@@ -98,14 +88,6 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Set<Ticket> getTicket() {
-        return ticket;
-    }
-
-    public void setTicket(Set<Ticket> ticket) {
-        this.ticket = ticket;
     }
 
     @Override

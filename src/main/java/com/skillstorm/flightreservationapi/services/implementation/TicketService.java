@@ -135,7 +135,6 @@ public class TicketService extends GenericRepositoryImpl<Ticket, Integer> implem
 		if (ticket != null) {
 			ticket.getSeat().setTaken(false);
 			Seat savedSeat = seatRepository.save(ticket.getSeat());
-
 			ticket.setSeat(savedSeat);
 			ticketRepository.save(ticket);
 			ticketRepository.deleteById(id);
